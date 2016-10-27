@@ -46,15 +46,6 @@ public class CannedTweetsService implements Runnable {
 
     }
 
-    private void addArtificialDelay() {
-        try {
-            //reading the file is FAST, add an artificial delay
-            MILLISECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            LOGGER.log(WARNING, e.getMessage(), e);
-        }
-    }
-
     public void stop() throws Exception {
         server.stop();
         executor.shutdownNow();
